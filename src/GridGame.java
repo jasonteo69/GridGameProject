@@ -25,9 +25,14 @@ public class GridGame {
     // create several Treasure objects (up to you how many), with symbol of your choice,
     // each with a point value that you decide, and place them throughout the board
     private void setupBoard() {
-        // WRITE THIS METHOD
-
-
+        board = new Space[8][8];
+        for (int i = 0; i < board.length; i++) {
+            for (int f = 0; f < board[0].length; f++) {
+                board[i][f] = new Space("_");
+            }
+        }
+        Goal goal = new Goal("X");
+        board[0][board.length - 1] = goal;
 
     }
 
@@ -42,7 +47,12 @@ public class GridGame {
        M___#___
      */
     private void printBoard() {
-        // WRITE THIS METHOD
+        for (Space[] spaces : board) {
+            for (Space space : spaces) {
+                System.out.print(space.toString());
+            }
+            System.out.println();
+        }
 
 
     }
@@ -59,7 +69,14 @@ public class GridGame {
         // if player moves to a position occupied by a Treasure, add its point value to the players score,
         // and replace that element with a Space object (with "_" symbol).
         // if the player reaches the goal, end the game and print their final score and the number of moves it took
+        while (!player.getSymbol().equals("X")) {
+            printBoard();
+            System.out.println("Enter a direction: W, A, S, D (up, left, down, right)");
+            String choice = scanner.nextLine();
+            if (choice.equals("W") && ) {
 
+            }
+        }
 
 
     }
